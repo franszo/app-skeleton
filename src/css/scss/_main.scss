@@ -1,0 +1,344 @@
+/**********************/
+/* CUSTOM DEFINITIONS */
+/**********************/
+
+.navcontainer {
+	padding-top: 2.5rem;
+	padding-bottom: 1rem;
+	@include clearfix;
+    width: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    top: 0;
+
+	@include filter-gradient(#ffffff, rgba(255,0,0,0), horizontal); // IE6-9
+	@include background-image(linear-gradient(left,  #ffffff 0%,#ffffff 50%,rgba(255,0,0,0) 50%,rgba(255,0,0,0) 100%));
+
+	// &:after {
+	// 	position: fixed;
+	// 	width: 50%;
+	// 	height: 20px;
+	// 	top: 68px;
+	// 	@include filter-gradient(#ffffff, rgba(255,0,0,0), vertical); // IE6-9
+	// 	@include background-image(linear-gradient(top,  #ffffff 0%,rgba(255,0,0,0) 100%));	
+
+	// 	@include dw(768) {
+	// 		display: none;
+	// 	}
+	// }
+
+	@include dw(768) {
+		background: none;
+	}
+
+
+    @include dw(768) {
+	    position: absolute;
+    }    
+
+    @include dw(6) {
+	    padding-top: 2em;
+    }
+	
+	a {
+		color: #FFF;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.logo {
+		max-height: 48px;
+		margin-left: 20px;	
+		margin-top: 5px;
+		float: left;	
+
+
+		@include dw(5) {
+			margin-left: 20px;
+		}
+
+		&:before {
+			@include icon('abritel-homeaway');
+			@include fs(32);
+			color: $blue;	
+
+			@include dw(768) {
+				color: #FFF;
+				@include fs(25);
+			}						
+		}
+	}
+
+	.house {
+		max-width: 37px;
+		max-height: 34px;
+		float: right;
+		margin-right: 20px;
+
+		@include dw(5) {
+			margin-right: 20px;
+		}		
+
+		&:before {
+			@include icon('logo');
+			@include fs(33);
+			color: #FFF;
+		}
+	}	
+}
+
+.layout {
+	@include clearfix;
+
+	.fix, .scroll {
+		@include box-sizing('border-box');
+		width: 50%;
+
+		@include dw(768) {
+			position: static !important;
+			width: 100%;
+			height: auto !important;
+		}	
+	}	
+
+	.fix {
+		position: fixed;
+		height: 100%;
+		right: 0;
+		top: 0;
+		@include cover-bg('../images/backgrounds/fix-bg.jpg');
+		padding: 15em 5em 2em;
+
+		@include dh(9) {
+			padding: 10rem 5rem 2rem;
+		}
+
+		@include dw(768) {
+			@include cover-bg('../images/backgrounds/fix-bg-768.jpg');
+		}
+
+		@include dw(6) {
+			padding: 8rem 2rem 2rem;	
+		}
+
+		@include dw(5) {
+			padding: 10em 2em 2em;
+		}			
+
+		.inner {
+			max-width: 511px;
+			margin: 0 auto;
+
+			@include dw(768) {
+			    text-align: center;
+			}			
+
+			.uefa-logo {
+				@include inline-block;
+				margin-bottom: 1em;
+
+				img {
+					@include dh(7) {
+						max-width: 65%;	
+					}	
+				}				
+			}
+
+			h1 {
+				font-weight: normal;
+				@include fs(32);
+				margin: 0;
+
+				@include dh(9) {
+					@include fs(25);
+				}
+
+				@include dw(5) {
+				    @include fs(22);
+				}					
+			}
+
+			h2 {
+				margin-top: 0;
+				@include fs(20);
+
+				@include dw(5) {
+					@include fs(18);
+				}
+			}
+
+			.wForm {
+				max-width: 88%;
+				margin-top: 50px;
+
+				h3 {
+					@include fs(25);
+					font-weight: normal;		
+
+					@include dh(7) {
+						@include fs(15);
+					}					
+
+					@include dw(5) {
+					    @include fs(22);
+					}					
+				}
+
+				@include dw(768) {
+				    margin: 50px auto;				    
+				}
+
+				@include dh(7) {
+					margin-top: 0px;
+				}			
+				.button {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.scroll {
+		float: left;
+
+		.wrapper {
+			padding: 15em 0 2em;
+
+			// Device Widths	
+			@include dw(9) {
+				padding: 8em 0 2em;			
+			}	
+
+			@include dw(768) {
+				padding: 8em 0 2em;			
+			}					
+
+			@include dw(6) {
+				padding: 8em 0 2em;			
+			}		
+
+			@include dw(6) {
+				padding: 8em 0 2em;			
+			}	
+
+
+			@include dw(4) {
+				padding: 8em 0 2em;			
+			}				
+
+			// Device Heights	
+			@include dh(9) {
+			    padding: 10em 0 2em;
+			}			
+		}
+
+		h3.main-title {
+			@include fs(34);
+			font-weight: normal;
+			color: $blue;
+			text-align: center;
+			max-width: 330px;
+			margin: 0 auto;
+		    padding: 0 1em;
+
+		    @include dw(1280) {
+		    	max-width: 280px;
+		    	@include fs(30);
+		    }
+
+			span {
+				color: $orange;
+			}
+		}
+
+		#intro {
+			@include fs(18);
+			color: $blue;
+			text-align: center;
+			max-width: 480px;
+			margin: 5em auto;
+			font-weight: 300;
+			line-height: 1.5;
+		    padding: 0 1em;
+
+		    @include dw(1280) {
+		    	max-width: 400px;
+		    	@include fs(15);
+		    }
+		}
+		
+		p {
+			font-size: 18px;
+			line-height: 1.5;
+			font-weight: 300;
+			color: $blue;	
+		    margin-bottom: 1.3em;		
+		}
+
+		.icon-chevron-down {
+			text-align: center;
+			color: $blue;
+		    margin: 15rem 0 5rem;
+		    display: block;
+		    font-size: 12px;
+		    width: 100%;		    
+
+		    @include dw(5) {
+		    	margin: 11rem 0 5rem;
+		    }
+		}
+	}	
+
+	.foot {
+		@include clearfix;
+		background: #F0F0F0;
+		padding: 6rem;
+
+		p {
+			color: $blue;
+			@include fs(11);
+
+			a {
+				color: $blue;
+				text-decoration: underline;
+			}
+		}
+	}		
+}
+
+#offre {
+	h3 {
+		text-align: center;
+		display: block;
+		color: $blue;
+		font-weight: normal;
+		padding: 5em 0;
+	}
+
+	p {
+		span {
+			color: $orange;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+
+		li {
+		    font-size: 15px;
+		    line-height: 1.5;
+		    font-weight: 300;
+		    color: $blue;
+		    position: relative;
+
+		    &:before {
+	    	  	content: "-";
+				left: -15px;
+				position: absolute;  				
+		    }
+		}
+	}	
+}
