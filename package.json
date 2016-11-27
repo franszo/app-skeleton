@@ -1,0 +1,39 @@
+{
+  "name": "-dev-skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franszo/app-skeleton.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franszo/app-skeleton/issues"
+  },
+  "homepage": "https://github.com/franszo/app-skeleton#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1",
+    "jquery": "^3.1.1",
+    "opn": "^4.0.2",
+    "require-dir": "^0.3.1"
+  },
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "latest",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "gulp-watch": "^4.3.11"
+  }
+}

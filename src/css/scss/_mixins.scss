@@ -44,7 +44,25 @@
     @return $px * 0.06666em;
 }
 
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
 
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
 
 //  Automatically add vendor prefixes in one hit //
 @mixin animate-prefixer($property, $value...) {
@@ -92,7 +110,7 @@
 }
 
 @mixin cover-bg($img-uri) {
-    background: url($img-uri) no-repeat center center; 
+    background: url($img-uri) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -101,7 +119,7 @@
 }
 
 @mixin cover-bg-parallax($img-uri) {
-    background: url($img-uri); 
+    background: url($img-uri);
     background-repeat: no-repeat;
     background-position: center 0%;
     -webkit-background-size: auto 120%;
@@ -138,7 +156,7 @@
 //
 // The 'flex-direction' property specifies how flex items are placed in
 // the flex container, by setting the direction of the flex container's
-// main axis. This determines the direction that flex items are laid out in. 
+// main axis. This determines the direction that flex items are laid out in.
 //
 // Values: row | row-reverse | column | column-reverse
 // Default: row
@@ -173,7 +191,7 @@
 //
 // The 'flex-wrap' property controls whether the flex container is single-line
 // or multi-line, and the direction of the cross-axis, which determines
-// the direction new lines are stacked in. 
+// the direction new lines are stacked in.
 //
 // Values: nowrap | wrap | wrap-reverse
 // Default: nowrap
@@ -186,8 +204,8 @@
     -moz-flex-wrap: $value;
     @if $value == nowrap {
         -ms-flex-wrap: none;
-    } @else { 
-        -ms-flex-wrap: $value; 
+    } @else {
+        -ms-flex-wrap: $value;
     }
     flex-wrap: $value;
 }
@@ -200,7 +218,7 @@
 // and 'flex-wrap' properties, which together define the flex container's
 // main and cross axes.
 //
-// Values: <flex-direction> | <flex-wrap> 
+// Values: <flex-direction> | <flex-wrap>
 // Default: row nowrap
 //
 // http://w3.org/tr/css3-flexbox/#flex-flow-property
@@ -273,9 +291,9 @@
 
 // Flexbox Basis
 //
-// The 'flex-basis' property sets the flex basis. Negative lengths are invalid. 
+// The 'flex-basis' property sets the flex basis. Negative lengths are invalid.
 //
-// Values: Like "width" 
+// Values: Like "width"
 // Default: auto
 //
 // http://www.w3.org/TR/css3-flexbox/#flex-basis-property
@@ -303,7 +321,7 @@
 // http://w3.org/tr/css3-flexbox/#flex-property
 
 @mixin flex($fg: 1, $fs: null, $fb: null) {
-    
+
     // Set a variable to be used by box-flex properties
     $fg-boxflex: $fg;
 
@@ -350,7 +368,7 @@
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
     } @else if $value == space-around {
-        -ms-flex-pack: distribute;      
+        -ms-flex-pack: distribute;
     } @else {
         -webkit-box-pack: $value;
         -ms-flex-pack: $value;
@@ -372,7 +390,7 @@
 // container's items, including anonymous flex items. 'align-self' allows
 // this default alignment to be overridden for individual flex items. (For
 // anonymous flex items, 'align-self' always matches the value of 'align-items'
-// on their associated flex container.) 
+// on their associated flex container.)
 //
 // Values: flex-start | flex-end | center | baseline | stretch
 // Default: stretch
