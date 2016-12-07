@@ -17,11 +17,16 @@
   },
   "homepage": "https://github.com/franszo/app-skeleton#readme",
   "dependencies": {
+    "browserify": "^13.1.1",
     "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-streamify": "^1.0.2",
     "gulp-webserver": "^0.9.1",
+    "gulpify": "^0.1.1",
     "jquery": "^3.1.1",
     "opn": "^4.0.2",
-    "require-dir": "^0.3.1"
+    "require-dir": "^0.3.1",
+    "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
     "gulp": "latest",

@@ -1,6 +1,6 @@
-var gulp      = require('gulp');
-var webserver = require('gulp-webserver');
-var opn       = require('opn');
+var gulp      = require('gulp'),
+    webserver = require('gulp-webserver'),
+    opn       = require('opn');
 
 var server = {
   host: 'localhost',
@@ -8,7 +8,7 @@ var server = {
 }
 
 gulp.task('webserver', function() {
-  gulp.src( '.' )
+  gulp.src( './dist/' )
     .pipe(webserver({
       host:             server.host,
       port:             server.port,

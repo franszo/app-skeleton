@@ -4,8 +4,12 @@
      that change within the directory it's serving from
 */
 
-var gulp = require('gulp');
+var gulp = require('gulp'),
+	watch = require('gulp-watch');
 
 gulp.task('watch', function() {
-    gulp.watch('./src/css/scss/**/*.scss', ['sass'])
+	gulp.watch('./src/**/*.html', ['markup']);
+    gulp.watch('./src/css/scss/**/*.scss', ['sass']);
+    gulp.watch('./src/js/*.js', ['browserify']);
+    gulp.watch('./src/images/**/*',{cwd:'./src'},['images']);
 });
